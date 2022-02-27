@@ -11,18 +11,15 @@ for number in range(1, 1000,
     numbers.append(number)  # Добавляем в список
 
 # a)
-summ_figures = []  # Задание а) решаю с созданием нового списка для более легкой работы
-for number in numbers:  # пользуюсь циклом for д
-    summ = 0
-    while (number != 0):  # определяю сумму цифр чисел
-        summ += number % 10
-        number = number // 10
-    summ_figures.append(summ)
-
 summ_numbers = 0
-for i in summ_figures:
-    if i % 7 == 0:  # Нахожу сумму чисел которая делится на 7 без остатка
-        summ_numbers += i  # Находим общую сумму
+for number in numbers:
+    summ = 0
+    integer = number
+    while integer != 0:
+        summ += integer % 10
+        integer = integer // 10
+    if summ % 7 == 0:  # сумма цифр которых делится нацело на 7
+        summ_numbers += number
 print(summ_numbers)
 
 # b) со *
@@ -30,9 +27,10 @@ summ_numbers2 = 0
 for number in numbers:
     number += 17  # К каждому элементу списка добавить 17
     summ = 0
-    while (number != 0):
-        summ += number % 10
-        number = number // 10
+    integer = number
+    while integer != 0:
+        summ += integer % 10
+        integer = integer // 10
     if summ % 7 == 0:  # сумма цифр которых делится нацело на 7
-        summ_numbers2 += summ
+        summ_numbers2 += number
 print(summ_numbers2)  # заново вычислить сумму тех чисел из этого списка
